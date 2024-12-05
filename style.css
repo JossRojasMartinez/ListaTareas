@@ -1,0 +1,106 @@
+:root {
+    --background-color: #F7F9FC;
+    --color-primario: #8fa6e0;
+    --color-secundario: #c2d3f6;
+    --text-size: 1.5rem;
+    --text-color: #070605;
+    --primary-button: #aeeeb0;
+    --secondary-button: #b06d09;
+    --active-background: #34f53b;
+    --border-color: #adc1f6;
+    --error-color: #F44336;
+      }
+
+body {
+    font-family: "Montserrat", serif;
+    background-color: var(--background-color);
+    height: 100vh;
+    color: var(--text-color);
+    display: 	flex;
+    justify-content: center;
+}   
+
+.contenedor {
+    max-width: 60%;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--color-primario);
+    border-radius: 10px;
+    border-color: var(--primary-button);
+}
+
+.encabezado {   
+    padding: 10px 0 5px 0;
+}
+.agregar {
+    background-color: var(--color-secundario);
+    border-radius: 15px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 70px;
+}
+
+.agregar input {   
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--border-color);
+    padding-left: 10px;
+}
+
+#input::placeholder {   
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.agregar i {   
+    font-size: 45px;   
+    color: var(--text-color);
+}
+
+.agregar i:hover {  
+    transform: scale(1.1);  
+    cursor: pointer;  
+}
+
+#lista h2 {   
+    margin-bottom: 20px;
+}
+
+#lista{   
+    font-size: 25PX;
+}
+
+#lista li{   
+    background-color: var(--text-color);
+    border-radius: 15px;
+    padding: 10px;
+    color: var(--background-color);
+    font-style:italic;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#elemento .bi-record-circle:hover {
+    color: var(--active-background);
+}
+
+#elemento .bi-trash:hover{
+    color: var(--error-color);
+}
+
+.tachado { 
+    text-decoration: line-through;
+    color: var(--active-background);
+}
+
+
+
+
