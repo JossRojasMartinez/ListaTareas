@@ -36,9 +36,9 @@ lista.insertAdjacentHTML("beforeend",elemento);
 };
 
 function tareaRealizada(element) {
-    element.classlist.toggle(check);
-    element.classlist.toggle(uncheck);
-    element.parentNode.querySelector('.text').classlist.toggle(tachado);
+    element.classList.toggle(check);
+    element.classList.toggle(uncheck);
+    element.parentNode.querySelector('.text').classList.toggle(tachado);
     LIST[element.id].realizado = [element.id].realizado ?false : true;
 };
 
@@ -57,7 +57,7 @@ botonAgregar.addEventListener("click", () => {
             hecho: false,
             eliminar: false,
         });
-        localStorage.stItem("TODO", JSON.stringify(LIST));
+        localStorage.setItem("TODO", JSON.stringify(LIST));
         id++;
         input.value = "";
     }
@@ -65,13 +65,13 @@ botonAgregar.addEventListener("click", () => {
 
 lista.addEventListener("click", function(event){
 const element = event.target;
-const elementData = element.attributes.data.value;
+const elementData = element.getAttribute("data");
 if(elementData == "hecho") {
     tareaRealizada(element);
     } else if (elementData =="eliminar"){
         tareaEliminada(element);
     };
-localStorage.stItem("TODO", JSON.stringify(LIST));   
+localStorage.setItem("TODO", JSON.stringify(LIST));   
 });
 
 let data = localStorage.getItem("TODO");
@@ -89,8 +89,7 @@ function cargarLista(array) {
         function (item) {
             agregarTarea(item.nombre, item.id,item.hecho,item.eliminar);
         }
-    );
-    
-}
+    );  
+};
 
 
